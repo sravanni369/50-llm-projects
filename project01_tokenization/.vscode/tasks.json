@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run project 1",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe part1_book_exercise.py; .\\.venv\\Scripts\\python.exe part3_jd_vocab.py; .\\.venv\\Scripts\\python.exe part2_telugu_cost.py; .\\.venv\\Scripts\\python.exe -m pytest test_tokenizers.py -v",
+      "presentation": { "reveal": "always", "focus": true },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}
