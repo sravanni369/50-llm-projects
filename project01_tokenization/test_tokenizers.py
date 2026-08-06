@@ -45,6 +45,14 @@ def test_scheme_counts_ordering():
     assert c['word']['total'] <= c['gpt2']['total'] < c['char']['total']
 
 
+def test_skill_term_fragmentation():
+    tok = gpt2_tokenizer()
+    assert len(tok.encode(' SQL')) == 1
+    assert len(tok.encode(' PyTorch')) == 3
+    assert len(tok.encode(' scikit-learn')) == 5
+    assert len(tok.encode('Excel')) == 2  # no leading space: fragments
+
+
 def test_telugu_costs_more():
     en = 'Children need good nutrition to grow well.'
     te = 'పిల్లలు బాగా ఎదగడానికి మంచి పోషకాహారం అవసరం.'

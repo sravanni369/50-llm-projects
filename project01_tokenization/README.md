@@ -20,13 +20,18 @@ Concept: the same text tokenized three ways — characters, words, GPT-2 byte-le
 
 **Part 2 (Telugu token cost).** On **3 author-written sentence pairs** (small, illustrative
 sample — not a corpus study): 353 Telugu vs 25 English GPT-2 tokens for the same meanings,
-a **~14x inflation**. Telugu fertility ≈ 20 tokens/word vs ≈ 1.1 for English, because GPT-2's
-BPE has essentially no Telugu merges and each Telugu character is 3 UTF-8 bytes.
+a **~14x inflation (range 13.4x–15.0x across pairs)**. Telugu fertility ≈ 20 tokens/word vs
+≈ 1.1 for English — partly because GPT-2's BPE has essentially no Telugu merges and each
+Telugu character is 3 UTF-8 bytes, and partly because agglutinative Telugu packs the same
+meaning into fewer words (17 vs 22 here), so the token ratio (14.1x) is the fairer headline
+number than the fertility ratio.
 Practical reading: GPT-2-tokenizer-based pricing/context budgets punish Indic-language text badly.
 
 **Part 3 (JD skill terms).** On 3 representative (synthetic, not scraped) requirement lines:
-`SQL`, `Python`, `Excel`, `dashboard`, `statistics` survive as single GPT-2 tokens;
-`Tableau` → 2 pieces, `PyTorch` → 3, `scikit-learn` → 5.
+`SQL`, `Python`, `Excel`, `dashboard`, `statistics` survive as single GPT-2 tokens **in their
+mid-sentence (leading-space) form**; at the start of a line the picture changes (`Excel` → 2,
+`dashboard` → 2, `statistics` → 2 pieces). `Tableau` → 2 pieces, `PyTorch` → 3,
+`scikit-learn` → 5 either way (4 without the space).
 
 ## Run it
 

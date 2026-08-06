@@ -5,11 +5,16 @@ fertility (tokens per word) and the Telugu/English token-count ratio
 under GPT-2's byte-level BPE, which has almost no Telugu merges.
 """
 
+import sys
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 from schemes import char_tokenize, word_tokenize, gpt2_tokenize
+
+# stock Windows console is cp1252 and cannot print Telugu
+sys.stdout.reconfigure(encoding='utf-8')
 
 # translation pairs (author-written, same meaning in both languages)
 PAIRS = [
