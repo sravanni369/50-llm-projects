@@ -1,0 +1,12 @@
+ELECTRIC SERVICE STATEMENT
+
+Billing detail 1: Meter read on 07/28 (actual). Usage this period: 1,142 kWh over 30 days. Base charge $14.50; energy charge at $0.1312 per kWh $149.83; fuel cost adjustment $9.41; environmental compliance cost recovery $3.86; municipal franchise fee $5.32; state and local taxes $11.04. Average daily temperature this period was 4 degrees warmer than the same period last year.
+
+Billing detail 2: Meter read on 07/28 (actual). Usage this period: 1,142 kWh over 30 days. Base charge $14.50; energy charge at $0.1312 per kWh $149.83; fuel cost adjustment $9.41; environmental compliance cost recovery $3.86; municipal franchise fee $5.32; state and local taxes $11.04. Average daily temperature this period was 4 degrees warmer than the same period last year.
+
+Billing detail 3: Meter read on 07/28 (actual). Usage this period: 1,142 kWh over 30 days. Base charge $14.50; energy charge at $0.1312 per kWh $149.83; fuel cost adjustment $9.41; environmental compliance cost recovery $3.86; municipal franchise fee $5.32; state and local taxes $11.04. Average daily temperature this period was 4 degrees warmer than the same period last year.
+
+Billing detail 4: Meter read on 07/28 (actual). Usage this period: 1,142 kWh over 30 days. Base charge $14.50; energy charge at $0.1312 per kWh $149.83; fuel cost adjustment $9.41; environmental compliance cost recovery $3.86; municipal franchise fee $5.32; state and local taxes $11.04. Average daily temperature this period was 4 degrees warmer than the same period last year.
+
+Billing detail 5: Meter read on 07/28 (actual). Usage this period: 1,142 kWh over 30 days. Base charge $14.50; energy charge at $0.1312 per kWh $149.83; fuel cost adjustment $9.41; environmental compliance cost recovery $3.86; municipal franchise fee $5.32; state and local taxes $11.04. Average daily temperature this period was 4 degrees warmer than the same period last year.
+
