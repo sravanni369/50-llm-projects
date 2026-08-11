@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run project 4",
+      "type": "shell",
+      "command": "$env:PYTHONIOENCODING='utf-8'; $py='C:/Users/laksh/AppData/Local/Programs/Python/Python313/python.exe'; & $py part2_tutor_cost.py; & $py -m pytest test_project04.py -q",
+      "presentation": { "reveal": "always", "focus": true },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}
