@@ -135,6 +135,8 @@ python part2_tutor_cost.py
 python -m pytest test_project04.py -q
 ```
 
+![run](screenshots/project04_run.png)
+
 Reads the corpus cached by project 3; run that project's `corpus.py` first if `cache/` is empty.
 
 ## Files
