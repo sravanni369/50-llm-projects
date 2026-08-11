@@ -4,7 +4,7 @@
     {
       "label": "run project 3",
       "type": "shell",
-      "command": "$env:PYTHONIOENCODING='utf-8'; python part1_book_exercise.py; python part2_language_cost.py; python part3_predict.py; python -m pytest test_project03.py -v",
+      "command": "$env:PYTHONIOENCODING='utf-8'; $py='C:/Users/laksh/AppData/Local/Programs/Python/Python313/python.exe'; & $py part1_book_exercise.py; & $py part2_language_cost.py; & $py part3_predict.py; & $py -m pytest test_project03.py -v",
       "presentation": { "reveal": "always", "focus": true },
       "runOptions": { "runOn": "folderOpen" }
     }

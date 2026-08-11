@@ -72,14 +72,30 @@ def _get_polite(url: str, params: dict, tries: int = 6):
     raise RuntimeError(f"still rate-limited after {tries} attempts: {url}")
 
 
+def normalise_newlines(text: str) -> str:
+    """Collapse CRLF and lone CR to LF.
+
+    This is not cosmetic. Several Gutenberg files contain thousands of *lone* CR
+    characters, and Python's universal-newline handling rewrites them to LF when the
+    cache is read back. Without normalising at fetch time, the first run (which
+    tokenizes the freshly downloaded string) and every later run (which reads the
+    cache) see different text and produce different token counts -- for The Great
+    Gatsby, 84,246 tokens versus 82,535, a 2% gap at an identical character count,
+    because GPT-2 tokenizes CR differently from LF. Normalising here makes a cold
+    cache and a warm cache agree.
+    """
+    return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
 def _cached(name: str, fetch) -> str:
     """Return cached text, fetching once if the cache is cold."""
     CACHE.mkdir(exist_ok=True)
     path = CACHE / name
     if path.exists():
-        return path.read_text(encoding="utf-8")
-    text = fetch()
-    path.write_text(text, encoding="utf-8")
+        return normalise_newlines(path.read_text(encoding="utf-8"))
+    text = normalise_newlines(fetch())
+    # newline="" stops Windows translating LF back to CRLF on the way out.
+    path.write_text(text, encoding="utf-8", newline="")
     return text
 
 

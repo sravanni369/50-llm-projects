@@ -91,6 +91,19 @@ def test_gutenberg_boilerplate_is_stripped():
     assert strip_gutenberg_boilerplate(raw) == "real text"
 
 
+def test_newlines_are_normalised():
+    from corpus import normalise_newlines
+    assert normalise_newlines("a\r\nb\rc\nd") == "a\nb\nc\nd"
+
+
+def test_cached_text_contains_no_carriage_returns(corpus):
+    """The bug this guards against: Windows write_text re-translated LF to CRLF on top
+    of Gutenberg's existing CRLF, so reading the cache back doubled every blank line and
+    the warm cache tokenized differently from the fresh download."""
+    for name, d in corpus.items():
+        assert "\r" not in d["text"], f"{name} still carries CR characters"
+
+
 def test_corpus_is_roughly_balanced_within_script(corpus):
     """Indic samples must be big enough to measure; the first run gave 216 chars."""
     for name, d in corpus.items():
